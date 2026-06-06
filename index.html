@@ -200,6 +200,12 @@ background:#020617;
 padding:20px;
 text-align:center;
 }
+ .menu-toggle{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
 
 @media(max-width:768px){
 
@@ -211,8 +217,26 @@ font-size:38px;
 grid-template-columns:1fr;
 }
 
+nav{
+padding:15px;
+flex-wrap:wrap;
+}
+
+.menu-toggle{
+display:block;
+}
+
 nav ul{
 display:none;
+width:100%;
+flex-direction:column;
+text-align:center;
+margin-top:15px;
+gap:15px;
+}
+
+nav ul.show{
+display:flex;
 }
 
 }
@@ -224,16 +248,22 @@ display:none;
 <!-- NAVBAR -->
 
 <nav>
+
 <div class="logo">SMIT</div>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
+<div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<ul id="mobileMenu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
 
 <!-- HERO -->
@@ -453,6 +483,15 @@ Ahmedabad, Gujarat, India
 © 2026 Smit Patel | Portfolio
 
 </footer>
+
+
+  <script>
+
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+</script>
 
 </body>
 </html>
